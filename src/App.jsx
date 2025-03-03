@@ -5,6 +5,7 @@ import './App.css'
 import { Button } from './components/ui/button'
 import { useEffect } from "react";
 import Navbar from './page/Navbar/Navbar'
+import Home from './page/Home/Home'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <Navbar/>
+      <Home/>
     </>
   )
 }

@@ -1,8 +1,0 @@
-@layer base {
-    body {
-      background-color: hsl(var(--background)); /* Dùng biến CSS để đổi màu */
-      color: hsl(var(--foreground));
-      overflow-x: hidden;
-    }
-  }
-  
