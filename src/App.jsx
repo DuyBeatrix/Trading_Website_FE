@@ -10,6 +10,7 @@ import { Route, Routes } from 'react-router-dom'
 import Portfolio from './page/Portfolio/Portfolio'
 import Activity from './page/Activity/Activity'
 import Watchlist from './page/Watchlist/Watchlist'
+import Wallet from './page/Wallet/Wallet'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path='/activity' element={<Activity/>}/>
         <Route path='/watchlist' element={<Watchlist/>}/>
+        <Route path='/wallet' element={<Wallet/>}/>
       </Routes>
     </>
   )
