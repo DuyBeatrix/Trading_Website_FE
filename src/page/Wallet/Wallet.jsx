@@ -3,19 +3,16 @@ import { Button } from "@/components/ui/button"
 import {
     Dialog,
     DialogContent,
-    DialogDescription,
-    DialogFooter,
     DialogHeader,
-    DialogTitle,
     DialogTrigger,
   } from "@/components/ui/dialog"
 import { ReloadIcon, UpdateIcon } from "@radix-ui/react-icons";
-import { CopyIcon, DollarSign, UploadIcon, WalletIcon } from "lucide-react";
+import { CopyIcon, DollarSign, ShuffleIcon, UploadIcon, WalletIcon } from "lucide-react";
 import React from "react";
 import RechargeForm from "./RechargeForm";
-import { Input } from "@/components/ui/input"
 import WithdrawalForm from "./WithdrawalForm";
 import MoneyTransferForm from "./MoneyTransferForm";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
 const Wallet = () => {
     return (
@@ -68,7 +65,7 @@ const Wallet = () => {
                                         <span className="text-sm mt-2">Withdrawal</span>
                                     </div>
                                 </DialogTrigger>
-                                <DialogContent>
+                                <DialogContent className="bg-black">
                                     <DialogHeader>
                                     
                                     </DialogHeader>
@@ -82,7 +79,7 @@ const Wallet = () => {
                                         <span className="text-sm mt-2">Transfer</span>
                                     </div>
                                 </DialogTrigger>
-                                <DialogContent>
+                                <DialogContent className="bg-black">
                                     <DialogHeader>
                                     
                                     </DialogHeader>
@@ -92,6 +89,35 @@ const Wallet = () => {
                         </div>  
                     </CardContent>
                 </Card>
+
+                <div className="py-5 pt-10">
+                    <div className="flex gap-2 items-center pb-5">
+                        <h1 className="text-2xl font-semibold">History</h1>
+                        <UpdateIcon className="h-7 w-7 p-0 cursor-pointer hover:text-gray-400"/>
+                    </div>
+                    <div className="space-y-5">
+                        {[1, 1, 1, 1].map((item, i) => 
+                            <Card className="lg:w-[50] px-5 py-2" key={i}>
+                                <div className="flex justify-between items-center">
+                                    <div className="flex items-center gap-5">
+                                        <Avatar>
+                                            <AvatarFallback>
+                                                <ShuffleIcon />
+                                            </AvatarFallback>
+                                        </Avatar>
+                                        <div className="space-y-1">
+                                            <h1>Buy Asset</h1>
+                                            <p className="text-sm text-gray-500">2024-06-03</p>
+                                        </div>
+                                    </div>
+                                    <div className="items-center">
+                                        <p className="text-green-500">999 USD</p>
+                                    </div>
+                                </div>
+                            </Card>
+                        )}
+                    </div>
+                </div>
             </div>
         </div>
     )

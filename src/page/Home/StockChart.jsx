@@ -116,19 +116,15 @@ const StockChart = () => {
         tooltip : {
             theme : "dark"
         },
-        fill: {
-            type: "gradient",
-            gradient: {
-                shadeIntensity: 1,
-                opacityFrom: 1, 
-                opacityTo: 1,
-                colorStops: [
-                    { offset: 0, color: "#FFFFFF", opacity: 1 },  
-                    { offset: 100, color: "#FFFFFF", opacity: 1 } 
-                ]
+        fill : {
+            type : "gradient",
+            gradient : {
+                shadeIntensity : 1,
+                opacityFrom : 0.7, 
+                opacityTo : 0.9,
+                stops : [0,100]
             }
         },
-        
         grid : {
             borderColor : "#47535E",
             strokeDashArray : 4, 
