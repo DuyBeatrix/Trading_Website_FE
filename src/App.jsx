@@ -13,6 +13,7 @@ import Watchlist from './page/Watchlist/Watchlist'
 import Wallet from './page/Wallet/Wallet'
 import PaymentDetail from './page/PaymentDetail/PaymentDetail'
 import Withdrawal from './page/Withdrawal/Withdrawal'
+import Profile from './page/Profile/Profile'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +31,7 @@ function App() {
         <Route path='/wallet' element={<Wallet/>}/>
         <Route path='/payment-detail' element={<PaymentDetail/>}/>
         <Route path='/withdrawal' element={<Withdrawal/>}/>
+        <Route path='/profile' element={<Profile/>}/>
       </Routes>
     </>
   )
