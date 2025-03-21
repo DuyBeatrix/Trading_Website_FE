@@ -14,6 +14,7 @@ import Wallet from './page/Wallet/Wallet'
 import PaymentDetail from './page/PaymentDetail/PaymentDetail'
 import Withdrawal from './page/Withdrawal/Withdrawal'
 import Profile from './page/Profile/Profile'
+import StockDetail from './page/Stock Details/StockDetail'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -32,6 +33,7 @@ function App() {
         <Route path='/payment-detail' element={<PaymentDetail/>}/>
         <Route path='/withdrawal' element={<Withdrawal/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route element={<StockDetail />} path="/market/bitcoin" />
       </Routes>
     </>
   )

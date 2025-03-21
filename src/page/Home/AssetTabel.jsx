@@ -1,9 +1,12 @@
 import React from "react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow, } from "@/components/ui/table"
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import { useNavigate } from "react-router-dom";
   
 
 const AssetTable = () => {
+    const navigate = useNavigate()
+
     return (
         <Table>
             <TableHeader>
@@ -16,10 +19,10 @@ const AssetTable = () => {
                     <TableHead className="text-right">PRICE</TableHead>
                 </TableRow>
             </TableHeader>
-            <TableBody>
+            <TableBody> 
                 {[1,1,1,1,1,1,1,1,1,1,1,1,1,1,1].map((item, index) => 
                     <TableRow key={index}>
-                        <TableCell className="font-medium">
+                        <TableCell onClick={() =>navigate(`/market/bitcoin`)} className="font-medium">
                             <Avatar>
                                 <AvatarImage src="https://coin-images.coingecko.com/coins/images/1/large/bitcoin.png?1696501400"></AvatarImage>
                                 <span>Bitcoin</span>
