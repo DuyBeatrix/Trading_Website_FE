@@ -1,0 +1,11 @@
+.authContainer {
+    background-image: url("https://cdn.dribbble.com/userupload/2638784/file/original-1f45b262c9fa7d142a6b3033a4a65f7b.jpg?resize=1504x1128&vertical=center");
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.bgBlure{
+  backdrop-filter: blur(10px);
+}
