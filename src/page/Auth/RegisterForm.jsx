@@ -1,12 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
-import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
+import { Form, FormField, FormItem, FormControl, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useDispatch } from "react-redux";
+import { register } from "@/State/Authentication/Action";
 
 const RegisterForm = () => 
 {
+    const dispatch = useDispatch()
     const form = useForm({
             resolver : "",
             defaultValues : {
@@ -16,6 +18,7 @@ const RegisterForm = () =>
             }
         })
     const onSubmit = (data) => {
+        dispatch(register(data))
         console.log("payment details form", data);
     };
 
@@ -55,11 +58,12 @@ const RegisterForm = () =>
                         )}    
                     />
                     <FormField
-                        control = {form.control} name = "password" type="password"
+                        control = {form.control} name = "password"
                         render = {({ field }) => (
                             <FormItem>
                                 <FormControl>
                                     <Input
+                                        type="password"
                                         name = "password"
                                         className="border w-full border-gray-700 p-5" 
                                         placeholder="Enter the password" {...field} 

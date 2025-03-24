@@ -1,11 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { DialogClose } from "@/components/ui/dialog";
 import { Form, FormField, FormItem, FormLabel, FormControl, FormDescription, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useDispatch } from "react-redux";
+import { login } from "@/State/Authentication/Action";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const form = useForm ( {
         resolver : "",
         defaultValues : {
@@ -14,7 +18,8 @@ const LoginForm = () => {
         }
     })
     const onSubmit = (data) => {
-        console.log("payment details form", data);
+        dispatch(login({data, navigate}))
+        console.log("Login form", data);
     };
 
     return (

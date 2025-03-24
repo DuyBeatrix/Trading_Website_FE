@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { SheetClose } from "@/components/ui/sheet";
 import { BookmarkIcon, CreditCardIcon, LandmarkIcon, WalletIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "@/State/Authentication/Action";
 
 const menu = [
     { name:"Home", path:"/", icon:<HomeIcon className="h-6 w-6"/> },
@@ -19,12 +21,21 @@ const menu = [
 
 const SideBar = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const handleLogout = () => {
+        dispatch(logout())
+    }
     return (
         <div className="m-10 mt-2 space-y-3">
             {menu.map((item) => (
                 <div key={item.name}>
                     <SheetClose className="w-full">
-                        <Button variant="outline" className="flex items-center gap-5 py-6 w-full" onClick={() => navigate(item.path)}>
+                        <Button variant="outline" className="flex items-center gap-5 py-6 w-full" onClick={() => {
+                                navigate(item.path)
+                                if(item.name == "Logout") {
+                                    handleLogout()
+                                }
+                            }}>
                             <span className="w-8">
                                 {item.icon}
                             </span>
